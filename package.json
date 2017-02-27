@@ -1,0 +1,22 @@
+{
+  "name": "p5-js-spielewiese",
+  "version": "1.0.0",
+  "description": "einfach drauf los",
+  "main": "index.htm",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derfrodo/p5JavascriptSpielewiese.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derfrodo/p5JavascriptSpielewiese/issues"
+  },
+  "homepage": "https://github.com/derfrodo/p5JavascriptSpielewiese#readme",
+  "dependencies": {
+    "p5": "^0.5.7"
+  }
+}
