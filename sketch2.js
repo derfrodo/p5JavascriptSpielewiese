@@ -14,7 +14,7 @@ function draw() {
     for (let i = 0; i < stars.length; i++) {
         let star = stars[i];
         fill(255);
-
+        noSmooth();
         const vec = star.vec;
         let size = (vec.mag() * 0.5);
         size = map(size, 0, width / 2, 2, 8);
