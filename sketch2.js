@@ -1,7 +1,9 @@
 function setup() {
     createCanvas(640, 480);
 
-    for (let i = 0; i < 200; i++) {
+    frameRate(30);
+
+    for (let i = 0; i < 100; i++) {
         const star = createStar();
         stars.push(star);
     }
@@ -16,17 +18,26 @@ function draw() {
         fill(255);
         noSmooth();
         const vec = star.vec;
-        let size = (vec.mag() * 0.5);
-        size = map(size, 0, width / 2, 2, 8);
+        let size = (vec.mag() * 1);
+        size = map(size, 0, width / 2, .5, 6);
         const pos = p5.Vector.add(star.offset, vec);
 
+        noStroke();
+        const color = star.color;
+        fill(color );
         ellipse(pos.x, pos.y, size);
+        
+        // fill(255, 50);        
+        // ellipse(pos.x, pos.y, size * 4);
 
-        vec.setMag(vec.mag() + 0.5);
-        vec.mult(1.0125);
+        const frameFactor = frameRate() / 15;
+        
+        // console.log(frameFactor);
+        vec.setMag(vec.mag() + 0.2 * frameFactor);
+        vec.mult(1 + 0.02 * frameFactor);
 
-        if (Math.abs(vec.x) > width / 2 ||
-            Math.abs(vec.y) > height / 2) {
+        if (Math.abs(pos.x) > width / 2 ||
+            Math.abs(pos.y) > height / 2) {
             stars[i] = createStar();
         }
     }
@@ -52,4 +63,5 @@ function Star(offset) {
     // console.log("this.vec");
     // console.log(this.vec);
     this.offset = offset;
+    this.color = color(255); //color(floor(random(0,256)),floor(random(0,256)),floor(random(0,256)));
 }
