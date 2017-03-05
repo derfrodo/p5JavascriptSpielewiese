@@ -26,7 +26,7 @@ function draw() {
 
     push();
 
-    const c2 = 10;
+    const c2 = 5;
 
     const tStamp = Date.now();
     const hmilli = tStamp % 2000;
@@ -47,13 +47,11 @@ function draw() {
     const mAngle = (min / 60) * (2 * PI);
 
     drawGear(200, 300, 40, c2, mAngle);
-    drawGear(330, 300, 80, c2 * 10, (-1) * sAngle);
-    drawGear(500, 300, 80, c2 * 2, hmsAngle);
+    drawGear(330, 300, 80, c2 * 60, (-1) * sAngle);
+    drawGear(426, 300, 16, c2 * 2, hmsAngle);
     drawGear(600, 300, 20, c2, (-1) * msAngle);
 
     pop();
-
-
 }
 
 function drawGear(x, y, radius, cogs, initialAngle) {
@@ -92,6 +90,10 @@ function drawGear(x, y, radius, cogs, initialAngle) {
         rect(-1 * (cogSize / 4), 0, cogSize / 2, cogSize);
         pop();
     }
-
+ 
     pop();
+}
+
+function drawGear2(x, y){
+
 }
