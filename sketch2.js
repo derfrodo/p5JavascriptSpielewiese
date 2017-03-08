@@ -1,5 +1,5 @@
 function setup() {
-    createCanvas(640, 480);
+    createCanvas(1000, 480);
 
     frameRate(30);
 
@@ -19,7 +19,7 @@ function draw() {
         noSmooth();
         const vec = star.vec;
         let size = (vec.mag() * 1);
-        size = map(size, 0, width / 2, .5, 6);
+        size = map(size, 0, width / 2, .5, 5);
         const pos = p5.Vector.add(star.offset, vec);
 
         noStroke();
